@@ -20,8 +20,8 @@ public class BullHorn {
     private String content;
 
     @NotNull
-    @Min(1)
-    private int date;
+    @Size(min=1, max = 10)
+    private String date;
 
     @NotNull
     @Size(min=5)
@@ -43,11 +43,11 @@ public class BullHorn {
         this.content = content;
     }
 
-    public int getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(int date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
