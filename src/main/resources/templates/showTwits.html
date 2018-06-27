@@ -6,16 +6,26 @@
     <title>Display Twits</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
           integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
 </head>
 <body>
 <div class="container jumbotron mt-4">
-    <a href="/">Show All the Twits</a><br/>
+    <h2 class="mt-4 pb-5 text-center">Twitter Feed</h2>
+    <a href="/" class="btn btn-warning ">Show All the Twits</a><br/>
+    <div class="row mt-4">
+        <div class="col-sm-12 col-md-4 ">
+            <div class="jumbotron bg-info text-white">
+                User Name: <span th:text="${twits.sentby}"></span> <br/>
 
-    User Name: <span th:text="${twits.sentby}"></span> <br/>
+                Content:  <span th:text="${twits.content}"></span><br/>
 
-    Content:  <span th:text="${twits.content}"></span><br/>
+                Date: <span th:text="${twits.date}"></span><br/>
+            </div>
 
-    Date: <span th:text="${twits.date}"></span><br/>
+        </div>
+
+    </div>
+
 
 
 
