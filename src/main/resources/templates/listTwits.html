@@ -10,28 +10,31 @@
     <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body >
-<div class="container jumbotron mt-4">
-    <h2 class="mt-4 pb-5 text-center">Twitter Feed</h2>
-    <a href="/add"  class="btn btn-warning">New Twits</a><br/>
+<div class="container ">
+    <div th:replace="fragments :: navlinks"></div>
+
+    <div class="bg-light p-4">
+        <h2 class="mt-4 pb-5 text-center">Twitter Feed</h2>
+        <a href="/add"  class="btn btn-warning">New Twits</a><br/>
 
 
-    <div  class="row mt-4">
+        <div  class="row mt-4">
 
-        <div  th:each="twit :${bullHorn}" class="col-sm-12 col-md-4">
-            <div class="jumbotron background ">
-                <div th:if="${twit.headshot}!= null">
-                    <img th:src="${twit.headshot}" alt="profile pic" class="img-responsive img-fluid rounded-circle"/>
+            <div  th:each="twit :${bullHorn}" class="col-sm-12 col-md-4">
+                <div class="jumbotron background ">
+                    <div th:if="${twit.headshot}!= null">
+                        <img th:src="${twit.headshot}" alt="profile pic" class="img-responsive img-fluid rounded-circle"/>
+                    </div>
+                    User : <span  th:text="${twit.sentby}"></span><br/>
+                    Email: <span th:text="${twit.email}"></span><br/>
+                    Content : <span th:text="${twit.content}"></span><br/>
+                    Date Posted: <span th:text="${twit.date}"></span><br/>
+                    <a th:href="@{/detail/{id}(id=${twit.id})}" class="btn btn-secondary mt-3">Details</a>
                 </div>
-                User : <span  th:text="${twit.sentby}"></span><br/>
-                Email: <span th:text="${twit.email}"></span><br/>
-                Content : <span th:text="${twit.content}"></span><br/>
-                Date Posted: <span th:text="${twit.date}"></span><br/>
-                <a th:href="@{/detail/{id}(id=${twit.id})}" class="btn btn-secondary mt-3">Details</a>
             </div>
         </div>
     </div>
-
-
+    <div th:replace="fragments :: footer"></div>
 </div>
 
 
