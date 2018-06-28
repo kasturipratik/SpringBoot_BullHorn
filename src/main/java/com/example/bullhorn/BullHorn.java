@@ -27,6 +27,28 @@ public class BullHorn {
     @Size(min=5)
     private String sentby;
 
+    @NotNull
+    @Size(min=5)
+    private String email;
+
+    private String headshot;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getHeadshot() {
+        return headshot;
+    }
+
+    public void setHeadshot(String headshot) {
+        this.headshot = headshot;
+    }
+
     public long getId() {
         return id;
     }

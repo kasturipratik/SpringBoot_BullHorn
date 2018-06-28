@@ -14,7 +14,10 @@
     <a href="/" class="btn btn-warning ">Show All the Twits</a>  <a href="/add" class="btn btn-warning ml-3">New Twits</a><br/><br/>
     <div class="row mt-4">
         <div class="col-sm-12 col-md-4 ">
-            <div class="jumbotron background text-white">
+            <div class="jumbotron background text-white " >
+                <div th:if="${twits.headshot}!=null">
+                    <img th:src="src{twit.headshot}" alt="profile pic" class="img-responsive img-fluid rounded-circle"/>
+                </div>
                 User Name: <span th:text="${twits.sentby}"></span> <br/>
 
                 Content:  <span th:text="${twits.content}"></span><br/>
