@@ -16,9 +16,9 @@
         <div class="col-sm-12 col-md-4 ">
             <div class="jumbotron background text-white " >
 
-                    <img th:src="src{twit.headshot}" alt="profile pic" class="img-responsive img-fluid rounded-circle"/>
+                <img th:src="${twits.headshot}" alt="profile pic" class="img-responsive img-fluid rounded-circle"/>
                 User Name: <span th:text="${twits.sentby}"></span> <br/>
-
+                Email: <span th:text="${twits.email}"></span><br/>
                 Content:  <span th:text="${twits.content}"></span><br/>
 
                 Date: <span th:text="${twits.date}"></span><br/>

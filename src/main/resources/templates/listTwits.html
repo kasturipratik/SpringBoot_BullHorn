@@ -26,7 +26,7 @@
                 Email: <span th:text="${twit.email}"></span><br/>
                 Content : <span th:text="${twit.content}"></span><br/>
                 Date Posted: <span th:text="${twit.date}"></span><br/>
-
+                <a th:href="@{/detail/{id}(id=${twit.id})}" class="btn btn-secondary mt-3">Details</a>
             </div>
         </div>
     </div>
